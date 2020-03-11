@@ -1,0 +1,41 @@
+<div id="wrapper" class="animate">
+    <div class="container-fluid">
+    <div class="col p-4">
+      <div class="register" align="center" style="width:50%;background: transparent;margin-left: 25%;height:370px;"> 
+        <form id="g" [formGroup]="searchform" class="form-inline ml-auto">
+                    <div class="md-form my-0" style="width:35%;margin-left: 25%;">
+                        <input type="search" id="search" formControlName="itemname" class="form-control" placeholder="Search" aria-label="Search" />
+                    </div>
+                    <button (click)="SearchItems()" class="btn btn-primary btn-outline-white btn-md my-0 ml-sm-2" type="submit">Search</button>
+        </form>
+                  <div class="card mb-3" style="width:1000px;background: transparent;border:0;">
+                    <div class="row no-gutters">
+                      <div class="col-md-8">
+                        <div class="card-body" style="width: auto;">
+                          <table class="box" style="background-color:whitesmoke;width:95%;">
+                            <!-- <tr *ngFor="let item of list">
+                                <th>{{item.itemname}}</th>
+                            </tr> -->
+                            <tr *ngFor="let item of list">
+                               <td> <img src='/assets/images/{{item.imagename}}' style="height:150px; width:150px;"></td>
+                               <td>
+                              Price: {{item.price}}
+                              Name: {{item.itemname}}
+                              Stock : {{item.stocknumber}}</td>
+                              <td>
+                              <button class="btn btn-primary btn-outline-white btn-md my-0 ml-sm-2" (click)="buy(item)" >Buy Now</button></td>
+                              <td><button class="btn btn-warning btn-outline-white btn-md my-0 ml-sm-2" (click)="AddtoCart(item)">Add To Cart</button></td>
+                            
+                            </tr>
+                        </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+        </div>
+    </div><!-- Main Col END -->
+    
+  
+  <router-outlet></router-outlet>

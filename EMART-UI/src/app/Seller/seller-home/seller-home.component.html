@@ -1,0 +1,80 @@
+
+<div id="wrapper" class="animate">
+  <nav class="navbar header-top fixed-top navbar-expand-lg navbar-light bg-light">
+    <span class="navbar-toggler-icon leftmenutrigger"></span>
+    <a class="navbar-brand" [routerLink]="'/home'" routerLinkActive="router-link-active" >
+      <img src="../assets/images/emart.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+      <span> Emart</span>
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav animate side-nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/seller-home'" routerLinkActive="router-link-active"  style="color:black;font-size:15px;">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'add-items'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">Add-Items</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'view-items'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">View-Items</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'view-profile'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">View-profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'view-reports'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">View-Reports</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-md-auto d-md-flex">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">LogOut</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-md bg-light justify-content-center">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" [routerLink]="'/seller-home'" routerLinkActive="router-link-active" style="color:black;font-size:15px;"><b>Home</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'add-items'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">Add Items</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'view-items'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">View Items</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'view-sellerprofile'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">View-Profile</a>
+      </li>
+    </ul>
+  </nav>
+  <footer class="footer footer-expand-lg navbar-dark bg-dark static fixed-bottom">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+       <a routerLink="/home"> www.EMART.com</a>
+     </div>
+ </footer>
+ 
+ <router-outlet></router-outlet>
+ <!---Javascript for sidenav-->
+     <script>
+       (function ($){
+   $( document ).ready(function() {
+       $('.leftmenutrigger').on('click', function(e) {
+       $('.side-nav').toggleClass("open");
+       e.preventDefault();
+      });
+   });
+   }( jQuery ));
+     </script>
+   
+ 

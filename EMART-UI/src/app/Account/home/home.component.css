@@ -1,0 +1,105 @@
+body{
+  background:#f9f9f9;
+  padding-top:20px;
+}
+#wrapper{
+  padding:90px 15px;
+}
+.navbar-expand-lg .navbar-nav.side-nav{
+  flex-direction: column;
+}
+.card{margin-bottom: 15px; border-radius:0; box-shadow: 0 3px 5px rgba(0,0,0,.1); }
+.header-top{box-shadow: 0 3px 5px rgba(0,0,0,.1)}
+.leftmenutrigger{display: none}
+@media(min-width:992px) {
+.leftmenutrigger{display: block;display: block;margin: 7px 20px 4px 0;cursor: pointer;}
+#wrapper{padding: 90px 15px 15px 15px; }
+.navbar-nav.side-nav.open {left:0;}
+.navbar-nav.side-nav{
+  background: #ccc;
+  box-shadow: 2px 1px 2px rgba(0,0,0,.1);
+  position:fixed;
+  top:56px;
+  flex-direction: column!important;
+  left:-220px;
+  width:200px;
+  overflow-y:auto;
+  bottom:0;overflow-x:hidden;padding-bottom:40px;
+}
+}
+.animate{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;-ms-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
+
+/*Carousel-item*/
+
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.fix-im {
+    position: relative;
+    bottom:11rem;
+}
+@media screen and (max-width:768px){
+.flex-100 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.fix-im {bottom: 0rem;}
+}
+.ugali {
+    background: black;
+    padding: 6px;
+}
+
+.main-text
+{
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    color: #FFF;
+}
+.btn-min-block
+{
+    min-width: 170px;
+    line-height: 26px;
+}
+.btn-clear
+{
+    color: #FFF;
+    background-color: transparent;
+    border-color: #FFF;
+    margin-right: 15px;
+}
+.btn-clear:hover
+{
+    color: #000;
+    background-color: #FFF;
+}
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 50%;
+  z-index: 2;
+  opacity: .7;
+  top:12%;
+  color: #fff;
+  height: 450px;
+  padding-top: 50px;
+  margin-right:32%;
+}
+.jumbotron {
+  position: absolute;
+  background: #000  center center no-repeat;
+  width: 100%;
+  background-size: cover;
+  overflow: auto;
+  height: 370px;
+}
+
+

@@ -1,0 +1,25 @@
+<br>  
+  <div class="container container-fluid" align="center">
+         <div class="table" >
+             <tr>
+                <th>Id</th>
+                <th>Buyer Id</th>
+                <th>Seller Id</th>
+                <th>Transactiontype</th>
+                <th>Item Id</th>
+                <th>Remarks</th>
+                
+             </tr>
+             <tr *ngFor="let items of list">  
+                  <td>{{items.id}}</td>
+                  <td>{{items.bid}}</td>
+                  <td>{{items.sid}}</td>
+                  <td>{{items.transactiontype}}</td>
+                  <td>{{items.itemid}}</td>
+                  <td>{{items.remarks}}</td>
+              
+                  <!-- <td><button class="btn btn-primary  mr-1"     data-toggle="modal" data-target="#myModal"(click)="Search(item.id)">Edit</button></td>
+                  <td><button class="btn btn-danger  mr-1" (click)="Deleteitem(item.id)">Delete</button></td> -->
+                  </tr>
+                  </div>
+                  </div>

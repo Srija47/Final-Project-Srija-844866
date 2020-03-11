@@ -1,0 +1,153 @@
+<div id="wrapper" class="animate">
+        <nav class="navbar header-top fixed-top navbar-expand-lg navbar-light bg-light">
+          <span class="navbar-toggler-icon leftmenutrigger"></span>
+          <a class="navbar-brand" [routerLink]="'/home'" routerLinkActive="router-link-active" >
+            <img src="../assets/images/emart.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+            <span> Emart</span>
+            </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav animate side-nav">
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active"  style="color:black;font-size:15px;">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color:black;font-size:15px;">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"style="color:black;font-size:15px;">Contact</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-md-auto d-md-flex">
+              <li class="nav-item">
+                <a class="nav-link"  [routerLink]="'/home'" routerLinkActive="router-link-active"  style="color:black;font-size:15px;">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <form class="form-inline mr-auto">
+                    <div class="md-form my-0">
+                      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-default btn-outline-white btn-md my-0 ml-sm-2"><i class="fa fa-search ml-3" aria-hidden="true"></i></button>
+                    </div>
+                  </form>
+            </li>
+            </ul>
+          </div>
+        </nav>
+    <div class="container-fluid">
+      <div class="col p-4" style="width:50%;background: transparent;margin-left: 25%;height:370px;">
+            <div class="register" align="center" style="background-color:whitesmoke;">
+                <h3 class="card-header font-weight-thick">Seller Registration form</h3>
+                <div class="container">
+            <form [formGroup]="sellerForm" (ngSubmit)="onSubmit()">
+              <br>
+                <table>
+                    <!-- <tr>
+                        <td><label>Seller ID</label></td>
+                        <td><input type="number" formControlName="sid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sid.errors }" />
+                        <div *ngIf="submitted && f.sid.errors" class="invalid-feedback">
+                            <div *ngIf="f.sid.errors.required"></div>
+                        </div></td>
+                    </tr> -->
+                    <tr>
+                        <td><label>UserName</label></td>
+                        <td><input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                            <div *ngIf="f.username.errors.required"></div>
+                            <div *ngIf="f.username.errors.pattern"></div>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td><label>Password</label></td>
+                        <td><input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required"></div>
+                            <div *ngIf="f.password.errors.pattern"></div>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td><label>Company Name</label></td>
+                        <td><input type="text" formControlName="companyname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.companyname.errors }" />
+                        <div *ngIf="submitted && f.companyname.errors" class="invalid-feedback">
+                            <div *ngIf="f.companyname.errors.required"></div>
+                        </div></td>
+                    </tr>
+                        <tr><td><label>GST</label></td>
+                    <td><input type="number" formControlName="gst" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gst.errors }" />
+                    <div *ngIf="submitted && f.gst.errors" class="invalid-feedback">
+                        <div *ngIf="f.gst.errors.required"></div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><label>About Company</label></td>
+                    <td><input type="text" formControlName="aboutcmpy" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.aboutcmpy.errors }" />
+                    <div *ngIf="submitted && f.aboutcmpy.errors" class="invalid-feedback">
+                        <div *ngIf="f.aboutcmpy.errors.required"></div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><label>Address</label></td>
+                    <td><input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+                    <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                        <div *ngIf="f.address.errors.required"></div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><label>Website</label></td>
+                    <td><input type="text" formControlName="website" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.website.errors }" />
+                    <div *ngIf="submitted && f.website.errors" class="invalid-feedback">
+                        <div *ngIf="f.website.errors.required"></div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><label>EmailID:</label></td>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required"></div>
+                        <div *ngIf="f.email.errors.email"></div>
+                    </div>
+                </tr>
+                <tr>
+                  <td><label>Mobile</label></td>
+                 <td><input type="text" formControlName="mobileno" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobileno.errors }" />
+                  <div *ngIf="submitted && f.mobileno.errors" class="invalid-feedback">
+                      <div *ngIf="f.mobileno.errors.required"></div>
+                      <div *ngIf="f.mobileno.errors.pattern"></div>
+                  </div></td>
+              </tr><br>
+                    <tr>
+                      &nbsp;&nbsp;
+                   <td> <button class="btn btn-primary mr-1" type="submit">Register</button>&nbsp;&nbsp;
+                   <button class="btn btn-primary mr-1" type="reset" (click)='onReset()'>Reset</button></td>
+                </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+        </div>
+        </div>
+</div>
+                <footer class="footer footer-expand-md navbar-dark bg-dark">
+                  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                    <a routerLink="/home"> www.EMART.com</a>
+                  </div>
+                </footer>
+                  <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
+      <script>
+        (function ($){
+    $( document ).ready(function() {
+        $('.leftmenutrigger').on('click', function(e) {
+        $('.side-nav').toggleClass("open");
+        e.preventDefault();
+       });
+    });
+    }( jQuery ));
+      </script>
+    

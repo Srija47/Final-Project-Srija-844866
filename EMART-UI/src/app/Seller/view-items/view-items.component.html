@@ -1,0 +1,78 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<div id="wrapper" class="animate">
+    <div class="container-fluid">
+        <div class="col p-4">
+<div class="container" style="background-color:antiquewhite">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let item of list">
+            <div class="card" style="width:250px;height:auto;">
+              
+              <img class="img" src="assets/images/{{item.imagename}}" alt="Card image" style="height:250px; width:250px;">
+              <div class="card-body">
+                <h4 class="card-title">{{item.itemname}}</h4>
+                <h5 class="card-text">ID:{{item.id}}
+                   Price:{{item.price}} </h5>
+                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="Edit(item.id)">
+                    Edit
+                  </button>&nbsp;&nbsp;
+                <button  type="button" (click)="Delete(item.id)" class="btn btn-danger">Delete</button>
+                <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+              </div>
+            </div>
+          </div>
+            </div>
+    </div>
+</div>
+<hr>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="width: 150%;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Items List</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="itemForm">
+          <div class="form-group">
+            <label for="id" class="col-form-label">ItemId</label>
+            <input type="text" class="form-control" id="id" formControlName="id" readonly="true"/>
+          </div>
+          <div class="form-group">
+            <label for="Itemname" class="col-form-label">ItemName</label>
+            <input type="text" class="form-control" id="Itemname" formControlName="itemname"/>
+          </div>
+          <div class="form-group">
+            <label for="price" class="col-form-label">Price</label>
+            <input type="text" class="form-control" id="price" formControlName="price"/>
+          </div>
+          <div class="form-group">
+            <label for="stock-number" class="col-form-label">Stock Number</label>
+            <input type="number" class="form-control" id="message-text" formControlName="stocknumber" />
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Description</label>
+            <textarea class="form-control" id="message-text" formControlName="description"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)='Update()'>Save Changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+ <router-outlet></router-outlet>
+ 
+   
+    

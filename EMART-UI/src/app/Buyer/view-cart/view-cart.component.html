@@ -1,0 +1,39 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<div id="wrapper" class="animate">
+    <div class="container-fluid">
+        <div class="col p-4">
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-3" *ngFor="let item of cartlist">
+                      <div class="card bg-dark" style="width:250px;height: 500px;" >
+                        <h5 class="card-title" style="color: whitesmoke;">{{item.itemname}}</h5>
+                         <img class="card-img mx-5" id="i1" src="/assets/Images/{{item.imagename}}" style="width: 150px;height:150px;" alt="Card image cap"> 
+                          <div class="card-body" style="color: whitesmoke;">
+                            ItemId:{{item.id}}<br/>
+                            CategoryId:{{item.categoryid}}<br/>
+                            SubCategoryId:{{item.subcategoryid}}<br/>
+                             SellerId: {{item.sid}}<br/>
+                             Price: {{item.price}}<br/>
+                              Description:{{item.description}}<br/>
+                              Stock Number:{{item.stocknumber}}<br/>
+                              Remarks:{{item.remarks}}     
+                        </div>
+                        <div class="card-footer">
+                          <div class="text-center">
+                            <button class="btn btn-primary mr-1" (click)="BuyNow(item)" >Buy Now</button>
+                            <button class="btn btn-danger mr-1" (click)="Remove(item.id)">Remove</button>
+                        </div>
+                        </div>     
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+</div>
+<hr>

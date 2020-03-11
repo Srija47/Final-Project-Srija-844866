@@ -1,0 +1,54 @@
+<br>
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-4 mx-auto">
+            <div class="card card-signin my-5 bg-dark" style="width:100%;">
+            <h5 class="card-header text-center" style="color: whitesmoke;">Payment Gateway</h5>
+                <div class="card-body">
+                    <form [formGroup]="RegisterForm" (ngSubmit)="onSubmit()">    
+                          <div class="form-group">
+                            <label style="color: whitesmoke;">Number Of Items</label>
+                            <input type="text" formControlName="noofitems" class="form-control" autofocus/>
+                          </div>
+                          <div class="form-group">
+                            <label style="color: whitesmoke;">Date</label>
+                            <input type="date" formControlName="datetime" class="form-control"/>
+                          </div>
+                        <div class="form-group">
+                            <label style="color: whitesmoke;">Choose PayMent Mode</label>
+                            <select formControlName="transactiontype">
+                                <option value="credit">Credit Card</option>
+                                <option value="debit">Debit Card</option>
+                                <option value="cod">Cash On Delivery</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label style="color: whitesmoke;">Card Number</label>
+                            <input type="text" formControlName="cardnumber" class="form-control"/>
+                          </div>
+                          <div class="form-group">
+                            <label style="color: whitesmoke;">CVV</label>
+                            <input type="number" formControlName="cvv" class="form-control" style="width: 30%;"/>
+                          </div>
+                          <div class="form-group">
+                            <label style="color: whitesmoke;">ExpiryDate</label>
+                            <input type="date" formControlName="ed" class="form-control"/>
+                          </div>
+                          <div class="form-group">
+                            <label style="color: whitesmoke;">Card Holders Name</label>
+                            <input type="text" formControlName="name" class="form-control"/>
+                          </div>
+                          <div class="form-group">
+                            <label style="color: whitesmoke;">Remarks</label>
+                            <textarea type="text" formControlName="remarks" class="form-control"></textarea>
+                          </div>
+                        <hr class="my-4 bg-success"/>
+                        <div class="form-group">
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary mr-1">Purchase</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
