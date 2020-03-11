@@ -1,0 +1,68 @@
+Started by an SCM change
+Running as SYSTEM
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\EMartUI
+No credentials specified
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/Srija47/Final-Project-Srija-844866 # timeout=10
+Fetching upstream changes from https://github.com/Srija47/Final-Project-Srija-844866
+ > git.exe --version # timeout=10
+ > git.exe fetch --tags --force --progress -- https://github.com/Srija47/Final-Project-Srija-844866 +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 751ed452f88cb4c67740ccf59dd175c50c017a8e (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 751ed452f88cb4c67740ccf59dd175c50c017a8e # timeout=10
+Commit message: "jenkinscommit"
+ > git.exe rev-list --no-walk 92f590f58cd10c5b1a23a9c8f9e3b01f45b76c97 # timeout=10
+[EMartUI] $ cmd /c call C:\Windows\TEMP\jenkins2404278935018727096.bat
+
+C:\Program Files (x86)\Jenkins\workspace\EMartUI>CD EMART-UI 
+
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI>npm run ng -- build --prod 
+
+> emart-ui@0.0.0 ng C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI
+> ng "build" "--prod"
+
+Generating ES5 bundles for differential loading...
+ES5 bundle generation complete.
+
+chunk {2} polyfills-es2015.5b10b8fd823b6392f1fd.js (polyfills) 36.2 kB [initial] [rendered]
+chunk {3} polyfills-es5.8e50a9832860f7cf804a.js (polyfills-es5) 126 kB [initial] [rendered]
+chunk {1} main-es2015.b73d7803b650848bb70f.js (main) 547 kB [initial] [rendered]
+chunk {1} main-es5.b73d7803b650848bb70f.js (main) 618 kB [initial] [rendered]
+chunk {0} runtime-es2015.c5fa8325f89fc516600b.js (runtime) 1.45 kB [entry] [rendered]
+chunk {0} runtime-es5.c5fa8325f89fc516600b.js (runtime) 1.45 kB [entry] [rendered]
+chunk {4} styles.acfe5e83791f52e031b2.css (styles) 154 kB [initial] [rendered]
+chunk {scripts} scripts.31e8aa562a64e90c17b1.js (scripts) 158 bytes [entry] [rendered]
+Date: 2020-03-11T08:12:53.501Z - Hash: e98da2ee563cc66bf0b6 - Time: 19962ms
+[EMartUI] $ cmd /c call C:\Windows\TEMP\jenkins290272406305720771.bat
+
+C:\Program Files (x86)\Jenkins\workspace\EMartUI>xcopy /s "C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI" "C:\inetpub\wwwroot\EMart"  
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI\3rdpartylicenses.txt
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI\full page.750666e2c4b3c5d0fa03.png
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI\index.html
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI\main-es2015.b73d7803b650848bb70f.js
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI\main-es5.b73d7803b650848bb70f.js
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI\polyfills-es2015.5b10b8fd823b6392f1fd.js
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI\polyfills-es5.8e50a9832860f7cf804a.js
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI\runtime-es2015.c5fa8325f89fc516600b.js
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI\runtime-es5.c5fa8325f89fc516600b.js
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI\scripts.31e8aa562a64e90c17b1.js
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI\styles.acfe5e83791f52e031b2.css
+C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI\wallpaper1.6a0e2998451c906e9f58.jpg
+12 File(s) copied
+
+C:\Program Files (x86)\Jenkins\workspace\EMartUI>C:\Windows\System32\iisreset.exe
+
+Attempting stop...
+
+Internet services successfully stopped
+
+Attempting start...
+
+Internet services successfully restarted
+
+
+C:\Program Files (x86)\Jenkins\workspace\EMartUI>exit 0 
+Finished: SUCCESS

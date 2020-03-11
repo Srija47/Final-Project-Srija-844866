@@ -3,12 +3,23 @@
     <div class="col p-4">
       <div class="register" align="center" style="width:50%;background: transparent;margin-left: 25%;height:370px;"> 
         <form id="g" [formGroup]="searchform" class="form-inline ml-auto">
-                    <div class="md-form my-0" style="width:35%;margin-left: 25%;">
+                    <div class="md-form my-0" style="width:35%;margin-left: 30%;">
                         <input type="search" id="search" formControlName="itemname" class="form-control" placeholder="Search" aria-label="Search" />
                     </div>
                     <button (click)="SearchItems()" class="btn btn-primary btn-outline-white btn-md my-0 ml-sm-2" type="submit">Search</button>
         </form>
-                  <div class="card mb-3" style="width:1000px;background: transparent;border:0;">
+        <table><tr><td>
+        <div class="col-md-4">
+        <select [(ngModel)]="category" class="form-control">   
+          <option *ngFor="let item of categorylist" value="{{item.categoryid}}">{{item.categoryname}}</option>
+        </select>
+      </div>
+    </td><td>
+      <button class="btn btn-primary btn-outline-white btn-md my-0 ml-sm-2" type="submit" (click)="SearchItemByCategory(category)">Search</button>
+    </td>
+    </tr>
+    </table>            
+      <div class="card mb-3" style="width:1000px;background: transparent;border:0;">
                     <div class="row no-gutters">
                       <div class="col-md-8">
                         <div class="card-body" style="width: auto;">

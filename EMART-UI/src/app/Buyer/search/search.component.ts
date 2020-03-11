@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { UserService } from 'src/app/Services/user.service';
 import { Router } from '@angular/router';
 import { Cart } from 'src/app/Models/cart';
+import { Category } from 'src/app/Models/category';
 
 @Component({
   selector: 'app-search',
@@ -17,12 +18,17 @@ items:Items;
 item:Items;
 list1:Items[]=[];
 cart:Cart;
-  constructor(private service:UserService,private router:Router,
-    private formbuilder:FormBuilder) {
+categorylist:Category[]=[];
+category:string;
+  constructor(private service:UserService,private router:Router,private formbuilder:FormBuilder) {
       // this.item=JSON.parse(localStorage.getItem('item'));
       // this.list1.push(this.item);
       // console.log(this.item);
       // //console.log(this.item.id);
+      this.service.GetCategories().subscribe(res=>{
+        this.categorylist=res;
+        console.log(this.categorylist);
+      })
      }
 
   ngOnInit() {
@@ -54,6 +60,12 @@ buy(item:Items)
   localStorage.setItem('item',JSON.stringify(item));
   this.router.navigateByUrl('/buyer-home/buy-product');
   
+}
+SearchItemByCategory(categoryid:number){
+  this.service.SearchItemByCategory(categoryid).subscribe(res=>{
+    this.list=res;
+    console.log(this.list);
+  })
 }
 AddtoCart(item1:Items){
   console.log(item1);

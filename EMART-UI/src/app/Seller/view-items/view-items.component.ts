@@ -29,10 +29,14 @@ export class ViewItemsComponent implements OnInit {
     this.itemForm=this.builder.group({
       sid:[''],
       id:[''],
+      categoryid:[''],
+      subcategoryid:[''],
       itemname:[''],
       price:[''],
       stocknumber:[''],
-      description:['']
+      description:[''],
+      remarks:[''],
+      imagename:['']
     });
   }
   get f() { return this.itemForm.controls; }
@@ -47,7 +51,7 @@ export class ViewItemsComponent implements OnInit {
   Update()
   {
     this.item=new Items();
-    this.item.id=Number(this.itemForm.value["id"])
+    this.item.id=Number(this.itemForm.value["id"]);
     this.item.categoryid=Number(this.itemForm.value["categoryid"]);
     this.item.subcategoryid=Number(this.itemForm.value["subcategoryid"]);
     this.item.price=this.itemForm.value["price"];
@@ -57,8 +61,8 @@ export class ViewItemsComponent implements OnInit {
     this.item.remarks=this.itemForm.value["remarks"];
     this.item.sid=Number(this.itemForm.value["sid"]);
     this.item.imagename=this.itemForm.value["imagename"]
-    // console.log(this.item);
-    // console.log(this.item.id);
+    console.log(this.item);
+    console.log(this.item.id);
     this.service.UpdateItem(this.item).subscribe(res=>{console.log(this.item),alert("updated succesfully")},err=>{
       console.log(err)
     })
@@ -69,7 +73,7 @@ Edit(id:number)
   this.service.GetItem(id).subscribe(res=>{
    this.item=res;
      console.log(this.item);
-    this.itemForm.patchValue({
+    this.itemForm.setValue({
       id:Number(this.item.id),
       categoryid:Number(this.item.categoryid),
       subcategoryid:Number(this.item.subcategoryid),

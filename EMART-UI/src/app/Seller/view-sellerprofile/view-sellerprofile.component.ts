@@ -16,9 +16,16 @@ export class ViewSellerprofileComponent implements OnInit {
   submitted=false;
   seller:Seller;
   token:Token;
-  sid:number;
+  id:number;
     constructor(private frombuilder:FormBuilder,private service:UserService,private route:Router) {
-      this.sid=JSON.parse(localStorage.getItem('Sid'));
+      this.id=Number(localStorage.getItem('Sid'));
+      // if(this.id){
+
+      // }
+      // else{
+      //   alert('please login With your Credentials');
+      //   this.route.navigateByUrl('/login');
+      // }
      }
   
     ngOnInit() {
@@ -36,11 +43,14 @@ export class ViewSellerprofileComponent implements OnInit {
       });
       this.GetProfileSeller();
     }
+    onSubmit(){
+      this.submitted=true;
+    }
     GetProfileSeller()
     {
-      this.service.GetProfileSeller(this.sid).subscribe(res=>  
+     // let id=Number(localStorage.getItem('Sid'))
+      this.service.GetProfileSeller(this.id).subscribe(res=>  
         {
-          
           this.seller=res;
           console.log(this.seller);
           this.sellerprofileForm.patchValue({
@@ -54,13 +64,15 @@ export class ViewSellerprofileComponent implements OnInit {
             website:this.seller.website,
             gst:Number(this.seller.gst),
             mobileno:this.seller.mobileno,
-            
+           
           })
+          
          })
     }
     
     Edit()
     {
+      
       this.seller=new Seller();
       this.seller.sid=Number(this.sellerprofileForm.value["sid"]),
       this.seller.username=this.sellerprofileForm.value["username"],
@@ -72,12 +84,13 @@ export class ViewSellerprofileComponent implements OnInit {
       this.seller.website=this.sellerprofileForm.value["website"],
       this.seller.mobileno=this.sellerprofileForm.value["mobileno"],
       this.seller.gst=Number(this.sellerprofileForm.value["gst"]),
+      console.log(this.seller);
       this.service.EditProfileSeller(this.seller).subscribe(res=>{console.log(this.seller),alert("updated succesfully"),this.GetProfileSeller()},err=>{
         console.log(err)
       })
     }
     Logout(){
-      //localStorage.clear();
+      localStorage.clear();
       this.route.navigateByUrl('HOME');
     }
 }

@@ -3,10 +3,10 @@
     <h3>Personal info</h3>   
     <div class="row">
         <div class="col-md-9">
-        <form [formGroup]="sellerprofileForm">
+        <form [formGroup]="sellerprofileForm" (ngSubmit)='onSubmit()'>
              <table class="table table-responsive">       
 <tr><td><label for="sid" class="label">Seller ID</label></td>
-                 <td>   <input type="number" formControlName="sid" class="form-control"/></td>
+                 <td>   <input type="text" formControlName="sid" class="form-control"/></td>
                    
                 </tr>  
                 <tr>

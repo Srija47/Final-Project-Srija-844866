@@ -111,6 +111,14 @@ public SearchItems(itemname:string):Observable<any>
   {
     return this.http.get<any>(this.url4+'SearchItems/'+itemname,Requestheaders)
   }
+  public SearchItemByCategory(categoryid:number):Observable<any>
+  {
+    return this.http.get<any>(this.url4+'SearchItemByCategory/'+categoryid,Requestheaders)
+  }
+  public SearchItemBySubCategory(subcategoryid:number):Observable<any>
+  {
+    return this.http.get<any>(this.url4+'SearchItemBySubCategory/'+subcategoryid,Requestheaders)
+  }
   public GetProfileBuyer(bid:number):Observable<any>
   {
   return this.http.get<any>(this.url4+'GetProfile/'+bid,Requestheaders);

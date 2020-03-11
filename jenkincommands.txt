@@ -1,0 +1,29 @@
+Build
+Execute Windows batch command
+
+ 	Command
+
+CD EMART-UI
+npm run ng -- build --prod
+
+
+@echo on
+xcopy /s "C:\Program Files (x86)\Jenkins\workspace\EMartUI\EMART-UI\dist\EMART-UI" "C:\inetpub\wwwroot\EMart" 
+C:\Windows\System32\iisreset.exe
+
+
+Source Code Management
+ None	
+ GitRepositories	Repository URL	https://github.com/Srija47/Final-Project-Srija-844866
+ Repository URL Credentials	
+ Add
+
+Build Triggers
+Trigger builds remotely (e.g., from scripts)	Help for feature: Trigger builds remotely (e.g., from scripts)
+Build after other projects are built	Help for feature: Build after other projects are built
+Build periodically	Help for feature: Build periodically
+GitHub hook trigger for GITScm polling	Help for feature: GitHub hook trigger for GITScm polling
+Poll SCM	Help for feature: Poll SCM
+ 	Schedule
+	
+command:*/1 * * * *
