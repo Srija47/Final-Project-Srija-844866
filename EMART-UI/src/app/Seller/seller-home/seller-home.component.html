@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon leftmenutrigger"></span>
     <a class="navbar-brand" [routerLink]="'/home'" routerLinkActive="router-link-active" >
       <img src="../assets/images/emart.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
-      <span> Emart</span>
+      <span style="color:black;font-size:25px;font-weight: bold;"> Emart</span>
       </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -13,31 +13,37 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav animate side-nav">
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/seller-home'" routerLinkActive="router-link-active"  style="color:black;font-size:15px;">Home
+          <a class="nav-link" [routerLink]="'/seller-home'" routerLinkActive="router-link-active" style="color:black;font-size:20px;font-weight: bold;">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'add-items'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">Add-Items</a>
+          <a class="nav-link" [routerLink]="'add-items'" routerLinkActive="router-link-active" style="color:black;font-size:20px;font-weight: bold;">Add-Items</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'view-items'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">View-Items</a>
+          <a class="nav-link" [routerLink]="'view-items'" routerLinkActive="router-link-active" style="color:black;font-size:20px;font-weight: bold;">View-Items</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'view-profile'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">View-profile</a>
+          <a class="nav-link" [routerLink]="'view-profile'" routerLinkActive="router-link-active" style="color:black;font-size:20px;font-weight: bold;">View-profile</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" [routerLink]="'view-reports'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">View-Reports</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="router-link-active" style="color:black;font-size:20px;font-weight: bold;">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="router-link-active" style="color:black;font-size:20px;font-weight: bold;">Contact</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-md-auto d-md-flex">
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">Home
+          <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active" style="color:black;font-size:20px;font-weight: bold;">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">LogOut</a>
+          <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active" style="color:black;font-size:20px;font-weight: bold;">LogOut</a>
         </li>
       </ul>
     </div>
@@ -45,17 +51,18 @@
   <nav class="navbar navbar-expand-md bg-light justify-content-center">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active" [routerLink]="'/seller-home'" routerLinkActive="router-link-active" style="color:black;font-size:15px;"><b>Home</b></a>
+        <a class="nav-link active" [routerLink]="'/seller-home'" routerLinkActive="router-link-active" style="color:black;font-size:20px;font-weight: bold;"><b>Home</b></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'add-items'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">Add Items</a>
+        <a class="nav-link" [routerLink]="'add-items'" routerLinkActive="router-link-active" style="color:black;font-size:20px;font-weight: bold;">Add Items</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'view-items'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">View Items</a>
+        <a class="nav-link" [routerLink]="'view-items'" routerLinkActive="router-link-active" style="color:black;font-size:20px;font-weight: bold;">View Items</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'view-sellerprofile'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">View-Profile</a>
+        <a class="nav-link" [routerLink]="'view-sellerprofile'" routerLinkActive="router-link-active" style="color:black;font-size:20px;font-weight: bold;">View-Profile</a>
       </li>
+      
     </ul>
   </nav>
   <footer class="footer footer-expand-lg navbar-dark bg-dark static fixed-bottom">

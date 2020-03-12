@@ -74,20 +74,25 @@ export class LoginComponent implements OnInit {
             alert("Welcome");
             this.route.navigateByUrl('admin-home');
           }
+          
           if(role=='buyer')
           {
             let token=new Token();
             this.service.BuyerLogin(username,password).subscribe(res=>{this.token=res,console.log(this.token)
               if(this.token.message=="Success")
               {
-                alert("welcome")
-            console.log(this.token)
-            localStorage.setItem("token",this.token.token);
-            localStorage.setItem("Bid",this.token.buyerid.toString());
-            this.route.navigateByUrl('buyer-home')
+                  alert("welcome");
+                  console.log(this.token);
+                  localStorage.setItem("token",this.token.token);
+                  localStorage.setItem("Bid",this.token.buyerid.toString());
+                  this.route.navigateByUrl('buyer-home');
               }
-        });
-      }
+              else{
+                alert("Invalid Credentials Login Failed...!");
+    
+              }
+            });
+          }
       if(role=='seller')
       {
         let token=new Token()
@@ -99,6 +104,10 @@ export class LoginComponent implements OnInit {
             localStorage.setItem("token",this.token.token);
             localStorage.setItem("Sid",this.token.sellerid.toString());
             this.route.navigateByUrl('seller-home')
+          }
+          else{
+            alert("Invalid Credentials Login Failed...!");
+
           }
     });
   }
