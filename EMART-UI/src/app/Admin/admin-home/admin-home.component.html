@@ -35,40 +35,38 @@
       </ul>
       <ul class="navbar-nav ml-md-auto d-md-flex">
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">Home
+          <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active" style="color:black;font-size:15px;font-weight: bold;">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">LogOut</a>
+          <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active" style="color:black;font-size:15px;font-weight: bold;">LogOut</a>
         </li>
-        <li class="nav-item">
-          <form class="form-inline mr-auto">
-              <div class="md-form my-0">
-                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                <i class="fa fa-search text-white ml-3" aria-hidden="true"></i>
-              </div>
-            </form>
-      </li>
       </ul>
     </div>
   </nav>
   <nav class="navbar navbar-expand-md bg-light justify-content-center">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active" [routerLink]="'/admin-home'" routerLinkActive="router-link-active" style="color:black;font-size:15px;"><b>Home</b></a>
+        <a class="nav-link active" [routerLink]="'/admin-home'" routerLinkActive="router-link-active" style="color:black;font-size:15px;font-weight: bold;"><b>Home</b></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'add-category'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">Add Category</a>
+        <a class="nav-link" [routerLink]="'add-category'" routerLinkActive="router-link-active" style="color:black;font-size:15px;font-weight: bold;">Add Category</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'add-subCategory'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">Add SubCategory</a>
+        <a class="nav-link" [routerLink]="'add-subCategory'" routerLinkActive="router-link-active" style="color:black;font-size:15px;font-weight: bold;">Add SubCategory</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'block-or-unblock-buyer'" routerLinkActive="router-link-active" style="color:black;font-size:15px;">Block/Unblock</a>
+        <a class="nav-link" [routerLink]="'block-or-unblock-buyer'" routerLinkActive="router-link-active" style="color:black;font-size:15px;font-weight: bold;">Block/Unblock Buyer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'block-or-unblock-seller'" routerLinkActive="router-link-active" style="color:black;font-size:15px;font-weight: bold;">Block/Unblock Seller</a>
       </li>
     </ul>
   </nav>
+  <div class="text-center">
+    <h1 style="color: whitesmoke;"><b>Welcome To Admin Dashboard!......</b></h1>
+  </div>
   <footer class="footer footer-expand-lg navbar-dark bg-dark static fixed-bottom">
     <div class="footer-copyright text-center py-3">© 2020 Copyright:
        <a routerLink="/home"> www.EMART.com</a>

@@ -19,13 +19,6 @@ export class ViewSellerprofileComponent implements OnInit {
   id:number;
     constructor(private frombuilder:FormBuilder,private service:UserService,private route:Router) {
       this.id=Number(localStorage.getItem('Sid'));
-      // if(this.id){
-
-      // }
-      // else{
-      //   alert('please login With your Credentials');
-      //   this.route.navigateByUrl('/login');
-      // }
      }
   
     ngOnInit() {

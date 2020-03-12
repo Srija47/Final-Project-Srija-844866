@@ -1,0 +1,107 @@
+<div id="wrapper" class="animate">
+    <nav class="navbar header-top fixed-top navbar-expand-lg navbar-light bg-light">
+      <span class="navbar-toggler-icon leftmenutrigger"></span>
+      <a class="navbar-brand" [routerLink]="'/home'" routerLinkActive="router-link-active" >
+        <img src="../assets/images/emart.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+        <span> Emart</span>
+        </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav animate side-nav">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active"  style="color:black;font-size:15px;">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about" routerLinkActive="router-link-active" style="color:black;font-size:20px;">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact" routerLinkActive="router-link-active" style="color:black;font-size:20px;">Contact</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-md-auto d-md-flex">
+          <li class="nav-item">
+            <a class="nav-link"  [routerLink]="'/home'" routerLinkActive="router-link-active"  style="color:black;font-size:15px;">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+   <br>
+<br>
+  <div class="hero-text">
+    <div class="col-sm-8 text-left" style="font-size:18px;color:black;">
+      <div class="bg">
+          <div class="container contact" style="width:80%;background-color: antiquewhite;">
+              <div class="row">
+                  <div class="col-md-3">
+                      <div class="contact-info">
+                          <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="Smiley face" >
+                          <h2>CONTACT US </h2>
+                          <h4>We would love to hear from you !</h4>
+                      </div>
+                  </div>
+                  <div class="col-md-9">
+                      <div class="contact-form">
+                          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                              <div class=form group>
+                                  <label class="control-label col-sm-2">Firstname:</label>
+                                  <input type="text" formControlName="fname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fname.errors }" />
+                                  <div *ngIf="submitted && f.fname.errors" class="invalid-feedback">
+                                      <div *ngIf="f.fname.errors.required">Firstname is required</div>
+                                      <div *ngIf="f.fname.errors.pattern">Enter only Alphabets</div>
+                                  </div>
+          
+                              <div class=form group>
+                                  <label class="control-label col-sm-2">Lastname:</label>
+                                  <input type="text" formControlName="lname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" />
+                                  <div *ngIf="submitted && f.lname.errors" class="invalid-feedback">
+                                      <div *ngIf="f.lname.errors.required">LastName is required</div>
+                                      <div *ngIf="f.lname.errors.pattern">Enter Lastname</div>
+                                  </div>
+                  
+                              </div>
+                              <div class=form group>
+                                  <label class="control-label col-sm-2">Email:</label>
+                                  <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                      <div *ngIf="f.email.errors.required">Email is required</div>
+                                      <div *ngIf="f.email.errors.pattern">Enter Email</div>
+                                  </div>
+                  
+                              </div>
+      
+                              <div class = form group>
+                                  <label class="control-label col-sm-2">Comments:</label>
+                                  <textarea type="text" formControlName="comment"  rows="5" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.comment.errors }" ></textarea>
+                                  <div *ngIf="submitted && f.comment.errors" class="invalid-feedback">
+                                      <div *ngIf="f.comment.errors.required">Give reason</div>
+                                  </div>
+                              </div>
+      <br/>
+      <br/>
+                              <div class=form group>        
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-lg btn-success ">Submit</button>
+                                  </div>
+                                </div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div> 
+  
+  <footer class="footer footer-expand-md navbar-dark bg-dark static fixed-bottom">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a routerLink="/home"> www.EMART.com</a>
+    </div>
+  </footer>

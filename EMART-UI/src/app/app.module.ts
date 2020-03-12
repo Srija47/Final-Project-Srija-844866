@@ -26,6 +26,9 @@ import { BuyerHomeComponent } from './Buyer/buyer-home/buyer-home.component';
 import { HomeComponent } from './Account/home/home.component';
 import {UserService } from './Services/user.service';
 import { ViewSellerprofileComponent } from './Seller/view-sellerprofile/view-sellerprofile.component';
+import { ContactComponent } from './Account/contact/contact.component';
+import { AboutComponent } from './Account/about/about.component';
+
 
 
 @NgModule({
@@ -51,7 +54,9 @@ import { ViewSellerprofileComponent } from './Seller/view-sellerprofile/view-sel
     SellerHomeComponent,
     BuyerHomeComponent,
     HomeComponent,
-    ViewSellerprofileComponent
+    ViewSellerprofileComponent,
+    ContactComponent,
+    AboutComponent
     
   ],
   imports: [

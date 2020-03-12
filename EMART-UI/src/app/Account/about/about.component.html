@@ -1,0 +1,46 @@
+<div id="wrapper" class="animate">
+    <nav class="navbar header-top fixed-top navbar-expand-lg navbar-light bg-light">
+      <span class="navbar-toggler-icon leftmenutrigger"></span>
+      <a class="navbar-brand" [routerLink]="'/home'" routerLinkActive="router-link-active" >
+        <img src="../assets/images/emart.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+        <span> Emart</span>
+        </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav animate side-nav">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/home'" routerLinkActive="router-link-active"  style="color:black;font-size:15px;">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about" routerLinkActive="router-link-active" style="color:black;font-size:20px;">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact" routerLinkActive="router-link-active" style="color:black;font-size:20px;">Contact</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-md-auto d-md-flex">
+          <li class="nav-item">
+            <a class="nav-link"  [routerLink]="'/home'" routerLinkActive="router-link-active"  style="color:black;font-size:15px;">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="text-center">
+        <h1 style="color: whitesmoke;"><b>Welcome To EMart...!</b></h1>
+        <p class="lead" style="font-size: 19px;font-weight: bold;">Emart is your friendly local expert for all things tech. Our philosophy is simple: to help you make informed choices when shopping for electronics.
+            When we started Emart in 2005, tablet computers didn’t exist. Smartphones were dramatically more expensive and less powerful. Comparing computers, phones and a vast array of other products from our first days to what’s available now can seem like comparing horse-drawn carts to high-performance cars.
+            All the ever-new technology and fresh ideas about how to use it are amazing – but it’s challenging for some people to keep up and choose products that are right for them. While some of our customers read tech websites every day and others carefully research products before they make selections, some people just know they have a need.
+            Whatever knowledge you have, we’re here to help – through this site and in our stores. Know exactly what you want? We’ll take care of it, fast. Have questions? We have answers. Not sure what questions to ask? We’ll ask you about your needs and share suggestions. Our commitment is to provide what’s best for you, not what we want to sell.</p>
+      </div>
+  <footer class="footer footer-expand-md navbar-dark bg-dark static fixed-bottom">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a routerLink="/home"> www.EMART.com</a>
+    </div>
+  </footer>

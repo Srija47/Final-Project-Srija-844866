@@ -5,6 +5,7 @@ import { UserService } from 'src/app/Services/user.service';
 import { Router } from '@angular/router';
 import { Cart } from 'src/app/Models/cart';
 import { Category } from 'src/app/Models/category';
+import { SubCategory } from 'src/app/Models/sub-category';
 
 @Component({
   selector: 'app-search',
@@ -19,15 +20,17 @@ item:Items;
 list1:Items[]=[];
 cart:Cart;
 categorylist:Category[]=[];
-category:string;
+category:number;
+subcategory:number;
+subcategorylist:SubCategory[]=[];
   constructor(private service:UserService,private router:Router,private formbuilder:FormBuilder) {
-      // this.item=JSON.parse(localStorage.getItem('item'));
-      // this.list1.push(this.item);
-      // console.log(this.item);
-      // //console.log(this.item.id);
       this.service.GetCategories().subscribe(res=>{
         this.categorylist=res;
         console.log(this.categorylist);
+      })
+      this.service.GetSubCategories().subscribe(res=>{
+        this.subcategorylist=res;
+        console.log(this.subcategorylist);
       })
      }
 
@@ -63,6 +66,12 @@ buy(item:Items)
 }
 SearchItemByCategory(categoryid:number){
   this.service.SearchItemByCategory(categoryid).subscribe(res=>{
+    this.list=res;
+    console.log(this.list);
+  })
+}
+SearchItemBySubCategory(subcategoryid:number){
+  this.service.SearchItemBySubCategory(subcategoryid).subscribe(res=>{
     this.list=res;
     console.log(this.list);
   })

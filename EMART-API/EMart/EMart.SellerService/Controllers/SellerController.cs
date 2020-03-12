@@ -32,7 +32,7 @@ namespace EMart.SellerService.Controllers
             }
         }
         [HttpPut]
-        [Route("EditProfile/{seller}")]
+        [Route("EditProfile")]
         public IActionResult Edit(Seller seller)
         {
             try

@@ -22,6 +22,8 @@ import { HomeComponent } from './Account/home/home.component';
 import { PurchaseHistoryComponent } from './Buyer/purchase-history/purchase-history.component';
 import { RegisterSellerComponent } from './Account/register-seller/register-seller.component';
 import { ViewSellerprofileComponent } from './Seller/view-sellerprofile/view-sellerprofile.component';
+import { AboutComponent } from './Account/about/about.component';
+import { ContactComponent } from './Account/contact/contact.component';
 
 
 const routes: Routes = [
@@ -29,7 +31,9 @@ const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'register-buyer',component:RegisterBuyerComponent},
-  {path:'register-seller',component:RegisterSellerComponent}
+  {path:'register-seller',component:RegisterSellerComponent},
+  {path:'about',component:AboutComponent},
+  {path:'contact',component:ContactComponent}
 ,
   {path:'seller-home',component:SellerHomeComponent,
     children:

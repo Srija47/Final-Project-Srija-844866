@@ -70,17 +70,18 @@ export class LoginComponent implements OnInit {
           let role=this.userForm.value['role']
           if(username=="Admin"&&password=="admin456@")
           {
+            localStorage.setItem('Admin','admin456@');
             alert("Welcome");
             this.route.navigateByUrl('admin-home');
           }
           if(role=='buyer')
           {
-            let token=new Token()
+            let token=new Token();
             this.service.BuyerLogin(username,password).subscribe(res=>{this.token=res,console.log(this.token)
               if(this.token.message=="Success")
               {
                 alert("welcome")
-         console.log(this.token)
+            console.log(this.token)
             localStorage.setItem("token",this.token.token);
             localStorage.setItem("Bid",this.token.buyerid.toString());
             this.route.navigateByUrl('buyer-home')
