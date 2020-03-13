@@ -70,9 +70,9 @@ namespace EMart.BuyerService.Repositories
             _context.Add(cart);
             _context.SaveChanges();
         }
-        public List<Cart> GetCartItems()
+        public List<Cart> GetCartItems(int bid)
         {
-            return _context.Cart.ToList();
+            return _context.Cart.Where(e => e.Bid == bid).ToList();
         }
         public Cart GetCartItemById(int id)
         {

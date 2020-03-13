@@ -17,17 +17,18 @@ export class PurchaseHistoryComponent implements OnInit {
   item:Items;
   list1:Items[]=[];
   constructor(private formbuilder:FormBuilder,private service:UserService,private route:Router) { 
-    // let id=Number(localStorage.getItem('Bid'))
-    // this.item=JSON.parse(localStorage.getItem('item'));
-    // this.list1.push(this.item);
-    // console.log(this.item);
-    //console.log(this.item.id);
-    this.service.GetPurchaseHistory().subscribe(res=>{
+    if(Number(localStorage.getItem('Bid'))){
+      let bid=Number(localStorage.getItem('Bid'));
+    this.service.PurchaseHistory(bid).subscribe(res=>{
       this.list=res;
       console.log(this.list);
     },err=>{
       console.log(err)
     })
+  }
+  else{
+    alert("Please Login With Your Credentials..")
+  }
   }
 
   ngOnInit() {

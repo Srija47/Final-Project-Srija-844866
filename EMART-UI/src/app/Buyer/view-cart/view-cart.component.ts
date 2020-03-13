@@ -13,10 +13,17 @@ export class ViewCartComponent implements OnInit {
   cartlist:Cart[];
   item:Items;
     constructor(private route:Router,private service:UserService) {
-      this.service.GetCartItems().subscribe(res=>{
+      if(Number(localStorage.getItem('Bid'))){
+        let bid=Number(localStorage.getItem('Bid'));
+      this.service.GetCartItems(bid).subscribe(res=>{
         this.cartlist=res;
         console.log(this.cartlist);
       })
+    }
+    else
+    {
+      console.log("Please Login With Credentials...");
+    }
      }
     ngOnInit() {
     }
@@ -26,10 +33,10 @@ export class ViewCartComponent implements OnInit {
         localStorage.setItem('item',JSON.stringify(this.item));
         this.route.navigateByUrl('/buyer-home/buy-product');
   }
-  Remove(itemid:number)
+  Remove(cartid:number)
   {
-    console.log(itemid);
-    let id=itemid;
+    console.log(cartid);
+    let id=cartid;
     this.service.RemoveCartItem(id).subscribe(res=>{
       console.log('Item Removed from Cart');
       alert('Item Removed from Cart');

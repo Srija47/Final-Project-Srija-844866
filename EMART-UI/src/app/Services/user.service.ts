@@ -139,16 +139,16 @@ public SearchItems(itemname:string):Observable<any>
   {
     return this.http.post<any>(this.url4+'AddtoCart',cart,Requestheaders);
   }
-  public GetCartItems():Observable<any>
+  public GetCartItems(bid:number):Observable<any>
   {
-    return this.http.get<any>(this.url4+'GetCartItems',Requestheaders);
+    return this.http.get<any>(this.url4+'GetCartItems/'+bid,Requestheaders);
   }
-  public RemoveCartItem(itemid:number):Observable<any>
+  public RemoveCartItem(cartid:number):Observable<any>
   {
-    return this.http.delete<any>(this.url4+'DeleteCartItem/'+itemid,Requestheaders);
+    return this.http.delete<any>(this.url4+'DeleteCartItem/'+cartid,Requestheaders);
   }
-  public GetPurchaseHistory():Observable<any>
+  public PurchaseHistory(bid:number):Observable<any>
   {
-    return this.http.get<any>(this.url4+'GetPurchaseHistory',Requestheaders);
+    return this.http.get<any>(this.url4+'PurchaseHistory/'+bid,Requestheaders);
   }
 }

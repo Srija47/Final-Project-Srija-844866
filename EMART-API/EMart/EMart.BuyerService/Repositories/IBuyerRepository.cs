@@ -21,7 +21,7 @@ namespace EMart.BuyerService.Repositories
         List<Items> GetAllItems();
         public Cart GetCartItemById(int id);
         public void AddtoCart(Cart cart);
-        List<Cart> GetCartItems();
+        List<Cart> GetCartItems(int bid);
         public void DeleteCartItem(int id);
         public List<PurchaseHistory> GetPurchaseHistorys();
 

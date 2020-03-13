@@ -165,12 +165,12 @@ namespace EMart.BuyerService.Controllers
             }
         }
         [HttpGet]
-        [Route("GetCartItems")]
-        public IActionResult GetCartItems()
+        [Route("GetCartItems/{bid}")]
+        public IActionResult GetCartItems(int bid)
         {
             try
             {
-                return Ok(_repo.GetCartItems());
+                return Ok(_repo.GetCartItems(bid));
             }
             catch (Exception ex)
             {
