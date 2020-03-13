@@ -21,8 +21,8 @@ namespace EmartTestProject
             _repo.AddCategory(new Category()
             {
                Categoryid=123,
-               Categoryname="Health",
-               Categorybrief="ShopHealthCare"
+               Categoryname="Grocery",
+               Categorybrief="Grocerystore"
             });
             var result = _repo.GetCategories();
             Assert.NotNull(result);
@@ -33,10 +33,10 @@ namespace EmartTestProject
             _repo.AddSubCategory(new SubCategory()
             {
                 Subcategoryid =1235,
-                Subcategoryname = "WomensHealth",
-                Subcategorybrief = "ShopWomensHealth",
+                Subcategoryname = "SnacksandBeverages",
+                Subcategorybrief = "SnacksFood",
                 Categoryid=123,
-                Gst=456123
+                Gst=7809001
             });
             var result = _repo.GetSubCategories();
             Assert.NotNull(result);

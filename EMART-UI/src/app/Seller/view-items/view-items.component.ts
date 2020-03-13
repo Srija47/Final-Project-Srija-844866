@@ -92,6 +92,7 @@ Edit(id:number)
     this.service.DeleteItem(id).subscribe(res=>{
       console.log('Record deleted');
       alert("Record Deleted Successfully")
+      window.location.reload();
     },
     err=>{
       console.log(err);
