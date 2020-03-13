@@ -30,7 +30,7 @@ namespace EmartTestProject
                 Datetime=System.DateTime.Now,
                 Remarks="Nothing"
             }) ;
-            var result = _repo.GetCartItems();
+            var result = _repo.GetCartItems(586);
             Assert.NotNull(result);
         }
         [Test]
@@ -120,21 +120,21 @@ namespace EmartTestProject
                 Sid = 1234,
                 Itemid = 868,
                 Price = "20000",
-                Itemname = "hdsfjkdsjk",
-                Description = "Realv5.0",
+                Itemname = "Glasses",
+                Description = "Real",
                 Stocknumber = 1233445,
                 Remarks = "GoodFeelInTouch",
-                Imagename = "smartphone.jpg"
+                Imagename = "glasses.jpg"
 
             });
-            var result = _repo.GetCartItems();
+            var result = _repo.GetCartItems(489);
             Assert.NotNull(result);
         }
         [Test]
         [Description("To Test Cart Items to display")]
         public void TestGetCartItems()
         {
-            var result = _repo.GetCartItems();
+            var result = _repo.GetCartItems(489);
             Assert.NotNull(result);
         }
         [Test]

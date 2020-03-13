@@ -28,7 +28,7 @@ namespace EmartTestProject
         {
             //Arrange
             Seller seller = _repo.GetProfile(1234);
-            seller.Mobileno = "9523345677";
+            seller.Mobileno = "9524595677";
             _repo.EditProfile(seller);
             Seller seller1 = _repo.GetProfile(1234);
             Assert.AreSame(seller, seller1);

@@ -46,7 +46,7 @@ namespace EmartTestProject
                 Email = "pharma@gmail.com",
                 Mobileno="9356789124"
             });
-            var result = _repo.SellerLogin("Holmes","Holmesvault&");
+            var result = _repo.SellerLogin("Sita", "Sitasheers&");
             Assert.NotNull(result);
         }
         [Test]
