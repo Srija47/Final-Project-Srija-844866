@@ -32,6 +32,9 @@ export class PurchaseHistoryComponent implements OnInit {
 
   ngOnInit() {
   }
- 
+  Logout(){
+    localStorage.clear();
+    this.route.navigateByUrl('/login');
+  }
 }
 

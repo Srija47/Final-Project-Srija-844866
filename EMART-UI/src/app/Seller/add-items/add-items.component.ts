@@ -40,7 +40,7 @@ export class AddItemsComponent implements OnInit {
       categoryid:['',[Validators.required]],
       subcategoryid:['',[Validators.required]],
       price:['',[Validators.required]],
-      itemname:['',[Validators.required,Validators.pattern('^[A-Za-z]{1,10}$')]],
+      itemname:['',[Validators.required,Validators.pattern('^[A-Za-z][0-9]{1,20}$')]],
       description:['',[Validators.required,Validators.pattern('^[A-Za-z]{1,20}$')]],
       stocknumber:['',[Validators.required]],
       remarks:['',[Validators.required]],

@@ -23,7 +23,6 @@ export class BuyProductComponent implements OnInit {
   purchasehistory:PurchaseHistory;
   constructor(private service:UserService,private formBuilder:FormBuilder,private route:Router) { 
     this.item=JSON.parse(localStorage.getItem('item'));
-    //this.list1.push(this.item);
     console.log(this.item);
     console.log(this.item.id);
   }
@@ -66,7 +65,7 @@ export class BuyProductComponent implements OnInit {
       })
     }
 Logout(){
-  //localStorage.clear();
+  localStorage.clear();
   this.route.navigateByUrl('/login');
 }
 get f() { return this.RegisterForm.controls; }

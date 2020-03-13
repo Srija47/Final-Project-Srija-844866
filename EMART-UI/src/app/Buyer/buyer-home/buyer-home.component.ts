@@ -7,8 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./buyer-home.component.css']
 })
 export class BuyerHomeComponent implements OnInit {
-
-  constructor(private route:Router) { }
+bid:number;
+  constructor(private route:Router) { 
+    if(localStorage.getItem('Bid')==null)
+    {
+      this.route.navigateByUrl('home')
+    }
+    this.bid=JSON.parse(localStorage.getItem('Bid'))
+  }
 
   ngOnInit() {
   }

@@ -19,7 +19,7 @@ export class RegisterSellerComponent implements OnInit {
     ngOnInit() {
       this.sellerForm=this.frombuilder.group({
         // sid:['',[Validators.required,Validators.pattern("^[0-9]{4}$")]],
-        username:['',[Validators.required,Validators.pattern("^[A-Za-z]{0,}$")]],
+        username:['',[Validators.required,Validators.pattern("^[A-Za-z]{0,20}$")]],
         password:['',[Validators.required,Validators.pattern("^[A-Za-z]{7,}[!@#$%^&*]")]],
         companyname:['',Validators.required],
         gst:['',Validators.required],

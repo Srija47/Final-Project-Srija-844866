@@ -31,7 +31,7 @@ export class AddSubCategoryComponent implements OnInit {
     this.SubCategoryForm=this.formBuilder.group({
       categoryid:['',[Validators.required]],
       // subcategoryid:['',[Validators.required]],
-      subcategoryname:['',[Validators.required,Validators.pattern('^[A-Za-z]{1,10}$')]],
+      subcategoryname:['',[Validators.required,Validators.pattern('^[A-Za-z]{1,20}$')]],
       subcategorybrief:['',Validators.required],
       // categoryname:['',Validators.required],
       gst:['',[Validators.required]]
