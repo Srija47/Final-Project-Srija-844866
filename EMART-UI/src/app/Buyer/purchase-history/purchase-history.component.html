@@ -2,15 +2,15 @@
   <div class="container container-fluid" align="center">
          <div class="table" >
              <tr>
-                <th>Id</th>
-                <th>Buyer Id</th>
-                <th>Seller Id</th>
-                <th>Transactiontype</th>
-                <th>Item Id</th>
-                <th>Remarks</th>
+               <th>Image</th>
+            <th>ID</th>
+            <th>Itemname</th>
+            <th>TransactionType</th>
+            <th>Quantity</th>
+            <th>Date</th> 
                 
              </tr>
-             <tr *ngFor="let items of list">  
+             <!-- <tr *ngFor="let items of list">  
                   <td>{{items.id}}</td>
                   <td>{{items.bid}}</td>
                   <td>{{items.sid}}</td>
@@ -20,6 +20,18 @@
               
                   <!-- <td><button class="btn btn-primary  mr-1"     data-toggle="modal" data-target="#myModal"(click)="Search(item.id)">Edit</button></td>
                   <td><button class="btn btn-danger  mr-1" (click)="Deleteitem(item.id)">Delete</button></td> -->
+                  <!-- </tr> -->
+                  <ng-container *ngFor="let purchase of list"> 
+                     <ng-container *ngFor="let items of list1">
+                    <tr *ngIf="items.id==purchase.itemid">   
+                     <td><img class="card-img-top" src="/assets/images/{{items.imagename}}" style="height:150px; width:150px;"></td>
+                     <td >{{items.id}}</td>
+                      <td>{{items.itemname}}</td>
+                      <td>{{purchase.transactiontype}}</td>
+                      <td>{{purchase.noofitems}}</td>
+                      <td>{{purchase.datetime|date:'MM-dd-yyyy'}}</td>
                   </tr>
+              </ng-container>
+             </ng-container>
                   </div>
                   </div>

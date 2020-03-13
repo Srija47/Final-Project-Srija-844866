@@ -22,6 +22,15 @@ export class PurchaseHistoryComponent implements OnInit {
     this.service.PurchaseHistory(bid).subscribe(res=>{
       this.list=res;
       console.log(this.list);
+      for(let i=0;i<this.list.length;i++)
+        {
+        this.service.GetItem(this.list[i].itemid).subscribe(res1=>{
+        console.log(this.list[i].itemid);
+          this.list1.push(res1);
+          console.log(this.list1);
+          
+        })
+        }
     },err=>{
       console.log(err)
     })
